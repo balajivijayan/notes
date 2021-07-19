@@ -57,17 +57,20 @@ Key-Value data store which contains the cluster information. All other k8s compo
 
 ## K8s Commands
 create minikube cluster
+
 minikube start --vm-driver=hyperkit
 kubectl get nodes
 minikube status
 kubectl version
 
 delete cluster and restart in debug mode
+
 minikube delete
 minikube start --vm-driver=hyperkit --v=7 --alsologtostderr
 minikube status
 
 kubectl commands
+
 kubectl get nodes
 kubectl get pod
 kubectl get services
@@ -77,12 +80,14 @@ kubectl get replicaset
 kubectl edit deployment nginx-depl
 
 debugging
+
 kubectl logs {pod-name}
 kubectl exec -it {pod-name} -- bin/bash
 
 kubectl delete deployment nginx-depl
 
 ### Deployment Config file
+
 vim nginx-deployment.yaml
 kubectl apply -f nginx-deployment.yaml
 
