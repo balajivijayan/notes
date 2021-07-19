@@ -54,3 +54,39 @@ Controller manager decides in which node the new deployment pod should be start/
 
 ### etcd
 Key-Value data store which contains the cluster information. All other k8s components store the state information about the cluster in the etcd data store. In case of replica of master nodes, the etcd data store is distributed.
+
+## K8s Commands
+create minikube cluster
+minikube start --vm-driver=hyperkit
+kubectl get nodes
+minikube status
+kubectl version
+
+delete cluster and restart in debug mode
+minikube delete
+minikube start --vm-driver=hyperkit --v=7 --alsologtostderr
+minikube status
+
+kubectl commands
+kubectl get nodes
+kubectl get pod
+kubectl get services
+kubectl create deployment nginx-depl --image=nginx
+kubectl get deployment
+kubectl get replicaset
+kubectl edit deployment nginx-depl
+
+debugging
+kubectl logs {pod-name}
+kubectl exec -it {pod-name} -- bin/bash
+
+kubectl delete deployment nginx-depl
+
+### Deployment Config file
+vim nginx-deployment.yaml
+kubectl apply -f nginx-deployment.yaml
+
+delete with config
+kubectl delete -f nginx-deployment.yaml
+#Metrics
+kubectl top The kubectl top command returns current CPU and memory usage for a cluster’s pods or nodes, or for a particular pod or node if specified.
