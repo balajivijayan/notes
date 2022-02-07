@@ -97,7 +97,7 @@ delete with config
 ```
 kubectl delete -f nginx-deployment.yaml
 ```
-#Metrics
+Metrics
 ```
 kubectl top
 ```
