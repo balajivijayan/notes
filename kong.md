@@ -62,3 +62,7 @@ docker network rm kong-net
 curl -i -s -X POST http://localhost:4001/services \
  --data name=example_service \
  --data url='http://httpbin.org'
+
+
+
+
